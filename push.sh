@@ -6,11 +6,9 @@ cd /workspace/projects/manufacturing-dashboard
 
 # Token 配置（请替换为你的 GitHub Personal Access Token）
 GITHUB_TOKEN="YOUR_GITHUB_TOKEN_HERE"
-REPO="github.com/zjh1202/erp-dashboard-vue.git"
 
-# 如果还没有设置远程仓库
-git remote set-url origin https://${GITHUB_TOKEN}@${REPO} 2>/dev/null || \
-git remote add origin https://${GITHUB_TOKEN}@${REPO}
+# 设置远程仓库（仅首次需要）
+git remote set-url origin https://github.com/zjh1202/erp-dashboard-vue.git
 
 # 获取提交信息
 if [ -z "$1" ]; then
@@ -31,7 +29,7 @@ fi
 # 提交
 git commit -m "$COMMIT_MSG"
 
-# 推送到 GitHub
-git push -u origin main
+# 推送到 GitHub（使用 Token 认证）
+git push -u https://${GITHUB_TOKEN}@github.com/zjh1202/erp-dashboard-vue.git main
 
 echo "✅ 推送完成！"
