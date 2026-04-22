@@ -12,6 +12,7 @@
     "vue-router": "^4.2.0",
     "echarts": "^5.5.0",
     "vue3-scroll-seamless": "^1.0.6",
+    "vue3-seamless-scroll": "^1.0.6",
     "odometer": "^0.4.8",
     "autofit.js": "^3.0.5"
   },
